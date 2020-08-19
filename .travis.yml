@@ -5,16 +5,6 @@ jdk:
 os:
   - linux
 
-# sudo: required
-
-# services:
-#  - docker
-
-# before_script:
-  # - docker pull docker.elastic.co/elasticsearch/elasticsearch:6.8.3
-  # - docker run -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.8.3
-
-
 install:
   - ./gradlew assemble
 
@@ -24,4 +14,3 @@ script:
   - ./gradlew search:test --tests org.ensembl.genesearch.info.*
   - ./gradlew search:test --tests org.ensembl.genesearch.output.*
   - ./gradlew search:test --tests org.ensembl.genesearch.utils.*
-  # - ./gradlew web:cleanTest web:test --tests org.ensembl.gti.genesearch.rest.MapXmlWriterTest
